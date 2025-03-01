@@ -106,4 +106,8 @@
 		"en"		"*{1}"
 	}
 
+	"Similar Game Mode"
+	{
+		"en"			"Similar Game Mode"
+	}
 }

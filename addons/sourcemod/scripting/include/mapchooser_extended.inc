@@ -71,7 +71,7 @@ forward OnMapVoteWarningTick(time);
  * 
  * @deprecated Will be removed in MapChooser 1.8.  Use OnMapVoteStarted instead.
  */
-forward OnMapVoteStart();
+forward OnMapVoteStart(Handle currentVoteMapList);
 
 /**
  * Called whenever vote ends
@@ -93,6 +93,20 @@ native bool:IsMapOfficial(const String:map[]);
  * @return		A CanNominateResult corresponding to whether a vote is allowed or not
  */
 native CanNominateResult:CanNominate();
+
+/**
+ * Retrieves the Display Name of the issued map.
+ *
+ * @param map 	Abolsute name of the map to lookup
+ * @param mapName The buffer of which the Map Name is stored
+ * @param size  The mapName buffer size
+ * @return		True if the map name was returned, flase if the map name was not resolved.
+ */
+native bool:GetMapName(const String:map[], String:mapName[], size);
+
+native void GetExcludeGameModeMapList(ArrayList array);
+
+native Handle GetUpcomingMapList();
 
 public SharedPlugin:__pl_mapchooser_extended = 
 {
